@@ -230,8 +230,8 @@ def handle_message(event):
                     )
                 ]
             )
+            line_bot_api.reply_message(event.reply_token, carousel_template_message)
         )
-    line_bot_api.reply_message(event.reply_token, carousel_template_message)
 #主程式
 import os
 if __name__ == "__main__":
