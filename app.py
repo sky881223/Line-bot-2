@@ -106,6 +106,8 @@ def handle_message(event):
                 )
             ]
         )
+        buttons_template_message = TemplateSendMessage(
+        alt_text='這個看不到',
         template2=ButtonsTemplate(
             thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pie_Chart.PNG/220px-Pie_Chart.PNG',
             title='輸出圖表',
