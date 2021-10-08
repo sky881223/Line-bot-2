@@ -93,21 +93,17 @@ def handle_message(event):
                             MessageAction(
                             label='輸出年齡圖',
                             text='輸出年齡圖'
-                        ),
+                            ),
                             MessageAction(
                             label='輸出性別圖',
                             text='輸出性別圖'
-                        ),
+                            ),
                         MessageAction(
                             label='輸出臉部配件圖',
                             text='輸出臉部配件圖'
-                        ),
-                        MessageAction(
-                            label='輸出頭髮圖',
-                            text='輸出頭髮圖'
-                        )
-                    ]
-                ),
+                            )
+                        ]
+                    ),
                     CarouselColumn(    
                         thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pie_Chart.PNG/220px-Pie_Chart.PNG',
                         title='輸出圖表',
@@ -116,24 +112,20 @@ def handle_message(event):
                             MessageAction(
                             label='輸出鬍子圖',
                             text='輸出鬍子圖'
-                        ),
+                            ),
                             MessageAction(
                             label='輸出眼鏡圖',
                             text='輸出眼鏡圖'
-                        ),
+                            ),
                             MessageAction(
                             label='輸出情緒圖',
                             text='輸出情緒圖'
-                        ),
-                            MessageAction(
-                            label='輸出化妝圖',
-                            text='輸出化妝圖'
-                        )
-                    ]
-                )
-            ]
+                            )
+                        ]
+                    )
+                ]
+            )
         )
-    )
         line_bot_api.reply_message(event.reply_token, carousel_template_message)
 #主程式
 import os
