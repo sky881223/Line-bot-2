@@ -52,7 +52,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     message = TextSendMessage(text=event.message.text)
-        if re.match('輸出圓餅性別圖',message):
+    if re.match('輸出圓餅性別圖',message):
         image_message = ImageSendMessage(
             original_content_url='https://drive.google.com/uc?export=view&id=11-bhcI25JtX4pv3Mn83uMcBko3xwi26O',
             preview_image_url='https://drive.google.com/uc?export=view&id=11-bhcI25JtX4pv3Mn83uMcBko3xwi26O'
