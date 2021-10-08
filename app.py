@@ -155,14 +155,6 @@ def handle_message(event):
             preview_image_url='https://drive.google.com/uc?export=view&id=10hztE-EeSDaowUBYUWD3Mm9s9NL-RKCC'
         )
         line_bot_api.reply_message(event.reply_token, image_message)
-
-
-
-
-
-
-
-
     else:
         carousel_template_message = TemplateSendMessage(
             alt_text='這個看不到',
@@ -175,15 +167,15 @@ def handle_message(event):
                         actions=[
                             MessageAction(
                             label='輸出圓餅年齡圖',
-                            text='輸出圓餅年齡圖'+message
+                            text='輸出圓餅年齡圖'
                             ),
                             MessageAction(
                             label='輸出圓餅性別圖',
-                            text='輸出圓餅性別圖'+message
+                            text='輸出圓餅性別圖'
                             ),
                         MessageAction(
                             label='輸出圓餅臉部配件圖',
-                            text='輸出圓餅臉部配件圖'+message
+                            text='輸出圓餅臉部配件圖'
                             )
                         ]
                     ),
@@ -194,7 +186,7 @@ def handle_message(event):
                         actions=[
                             MessageAction(
                             label='輸出圓餅鬍子圖',
-                            text='輸出圓餅鬍子圖'+message
+                            text='輸出圓餅鬍子圖'
                             ),
                             MessageAction(
                             label='輸出圓餅眼鏡圖',
@@ -228,15 +220,15 @@ def handle_message(event):
                         actions=[
                             MessageAction(
                             label='輸出長條年齡圖',
-                            text='輸出長條年齡圖'+message
+                            text='輸出長條年齡圖'
                             ),
                             MessageAction(
                             label='輸出長條性別圖',
-                            text='輸出長條性別圖'+message
+                            text='輸出長條性別圖'
                             ),
                         MessageAction(
                             label='輸出長條臉部配件圖',
-                            text='輸出長條臉部配件圖'+message
+                            text='輸出長條臉部配件圖'
                             )
                         ]
                     ),
@@ -247,7 +239,7 @@ def handle_message(event):
                         actions=[
                             MessageAction(
                             label='輸出長條鬍子圖',
-                            text='輸出長條鬍子圖'+message
+                            text='輸出長條鬍子圖'
                             ),
                             MessageAction(
                             label='輸出長條眼鏡圖',
