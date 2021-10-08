@@ -106,7 +106,7 @@ def handle_message(event):
                 )
             ]
         )
-        template=ButtonsTemplate(
+        template2=ButtonsTemplate(
             thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pie_Chart.PNG/220px-Pie_Chart.PNG',
             title='輸出圖表',
             text='請點選欲輸出圖表',
