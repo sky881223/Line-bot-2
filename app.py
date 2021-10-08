@@ -7,7 +7,7 @@ Created on Wed Jun  2 21:16:35 2021
 
 Line Bot聊天機器人
 第四章 選單功能
-按鈕樣板TemplateSendMessage
+多樣版組合按鈕CarouselTemplate
 """
 #載入LineBot所需要的套件
 from flask import Flask, request, abort
@@ -21,8 +21,6 @@ from linebot.exceptions import (
 from linebot.models import *
 import re
 app = Flask(__name__)
-
-
 
 
 # 必須放上自己的Channel Access Token
@@ -56,85 +54,62 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     message = text=event.message.text
-    if re.match('輸出性別圖',message):
-        image_message = ImageSendMessage(
-            original_content_url='https://drive.google.com/uc?export=view&id=11-bhcI25JtX4pv3Mn83uMcBko3xwi26O',
-            preview_image_url='https://drive.google.com/uc?export=view&id=11-bhcI25JtX4pv3Mn83uMcBko3xwi26O'
-        )
-        line_bot_api.reply_message(event.reply_token, image_message)
-    elif re.match('輸出年齡圖',message):
-        image_message = ImageSendMessage(
-            original_content_url='https://drive.google.com/uc?export=view&id=11MigttrIPY0WjIhLA4dPdGxeFhJEccUo',
-            preview_image_url='https://drive.google.com/uc?export=view&id=11MigttrIPY0WjIhLA4dPdGxeFhJEccUo'
-        )
-        line_bot_api.reply_message(event.reply_token, image_message)
-    elif re.match('輸出臉部配件圖',message):
-        image_message = ImageSendMessage(
-            original_content_url='https://drive.google.com/uc?export=view&id=11OZvpIaV26YcCjzWeU4BROzKfsMfecOk',
-            preview_image_url='https://drive.google.com/uc?export=view&id=11OZvpIaV26YcCjzWeU4BROzKfsMfecOk'
-        )
-        line_bot_api.reply_message(event.reply_token, image_message)
-    elif re.match('輸出頭髮圖',message):
-        image_message = ImageSendMessage(
-            original_content_url='https://drive.google.com/uc?export=view&id=11O88AFRZ_TLOb4kUijLWIS31PASezswQ',
-            preview_image_url='https://drive.google.com/uc?export=view&id=11O88AFRZ_TLOb4kUijLWIS31PASezswQ'
-        )
-        line_bot_api.reply_message(event.reply_token, image_message)
-    else:
+    if re.match('告訴我秘密',message):
         carousel_template_message = TemplateSendMessage(
-        alt_text='這個看不到',
-        template=CarouselTemplate(
-            columns=[
-                CarouselColumn(    
-                    thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pie_Chart.PNG/220px-Pie_Chart.PNG',
-                     title='輸出圖表',
-                    text='請點選欲輸出圖表',
-                    actions=[
-                        MessageAction(
-                         label='輸出年齡圖',
-                         text='輸出年齡圖'
+            alt_text='免費教學影片',
+            template=CarouselTemplate(
+                columns=[
+                    CarouselColumn(
+                        thumbnail_image_url='https://i.imgur.com/wpM584d.jpg',
+                        title='Python基礎教學',
+                        text='萬丈高樓平地起',
+                        actions=[
+                            MessageAction(
+                                label='教學內容',
+                                text='拆解步驟詳細介紹安裝並使用Anaconda、Python、Spyder、VScode…'
+                            ),
+                            URIAction(
+                                label='馬上查看',
+                                uri='https://marketingliveincode.com/?page_id=270'
+                            )
+                        ]
                     ),
-                        MessageAction(
-                        label='輸出性別圖',
-                        text='輸出性別圖'
+                    CarouselColumn(
+                        thumbnail_image_url='https://i.imgur.com/W7nI6fg.jpg',
+                        title='Line Bot聊天機器人',
+                        text='台灣最廣泛使用的通訊軟體',
+                        actions=[
+                            MessageAction(
+                                label='教學內容',
+                                text='Line Bot申請與串接'
+                            ),
+                            URIAction(
+                                label='馬上查看',
+                                uri='https://marketingliveincode.com/?page_id=2532'
+                            )
+                        ]
                     ),
-                    MessageAction(
-                        label='輸出臉部配件圖',
-                        text='輸出臉部配件圖'
-                    ),
-                    MessageAction(
-                        label='輸出頭髮圖',
-                        text='輸出頭髮圖'
-                    )
-                ]
-            ),
-            CarouselColumn(    
-                thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pie_Chart.PNG/220px-Pie_Chart.PNG',
-                title='輸出圖表',
-                text='請點選欲輸出圖表',
-                actions=[
-                    MessageAction(
-                        label='輸出鬍子圖',
-                        text='輸出鬍子圖'
-                    ),
-                    MessageAction(
-                        label='輸出眼鏡圖',
-                        text='輸出眼鏡圖'
-                    ),
-                    MessageAction(
-                        label='輸出情緒圖',
-                        text='輸出情緒圖'
-                    ),
-                    MessageAction(
-                        label='輸出化妝圖',
-                        text='輸出化妝圖'
+                    CarouselColumn(
+                        thumbnail_image_url='https://i.imgur.com/l7rzfIK.jpg',
+                        title='Telegram Bot聊天機器人',
+                        text='唯有真正的方便，能帶來意想不到的價值',
+                        actions=[
+                            MessageAction(
+                                label='教學內容',
+                                text='Telegrame申請與串接'
+                            ),
+                            URIAction(
+                                label='馬上查看',
+                                uri='https://marketingliveincode.com/?page_id=2648'
+                            )
+                        ]
                     )
                 ]
             )
-        ]
-    )
-)
-        line_bot_api.reply_message(event.reply_token, buttons_template_message)
+        )
+        line_bot_api.reply_message(event.reply_token, carousel_template_message)
+    else:
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(message))
 #主程式
 import os
 if __name__ == "__main__":
