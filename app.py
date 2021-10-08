@@ -56,22 +56,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     message = text=event.message.text
-    confirm_template_message = TemplateSendMessage(
-        alt_text='問問題',
-        template=ConfirmTemplate(
-            text='選擇輸出圖的種類',
-            actions=[
-                MessageAction(
-                    label='長條投',
-                    text='長條圖'
-                ),
-                MessageAction(
-                    label='圓餅圖',
-                    text='圓餅圖'
-                )
-            ]
-        )
-    )
+    line_bot_api.reply_message(event.reply_token, confirm_template_message)
     if re.match('輸出性別圖',message):
         image_message = ImageSendMessage(
             original_content_url='https://drive.google.com/uc?export=view&id=11-bhcI25JtX4pv3Mn83uMcBko3xwi26O',
@@ -153,6 +138,23 @@ def handle_message(event):
                             text='輸出頭髮圖'+message
                             )
                         ]
+                    )
+                ]
+            )
+        )
+    else :
+        confirm_template_message = TemplateSendMessage(
+            alt_text='問問題',
+            template=ConfirmTemplate(
+                text='選擇輸出圖的種類',
+                actions=[
+                    MessageAction(
+                        label='長條投',
+                        text='長條圖'
+                    ),
+                    MessageAction(
+                        label='圓餅圖',
+                        text='圓餅圖'
                     )
                 ]
             )
