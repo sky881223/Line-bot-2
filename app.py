@@ -6,8 +6,8 @@ Created on Wed Jun  2 21:16:35 2021
 版權屬於「行銷搬進大程式」所有，若有疑問，可聯絡ivanyang0606@gmail.com
 
 Line Bot聊天機器人
-第四章 選單功能
-按鈕樣板TemplateSendMessage
+第一章 Line Bot申請與串接
+Line Bot機器人串接與測試
 """
 #載入LineBot所需要的套件
 from flask import Flask, request, abort
@@ -19,11 +19,8 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import *
-import re
+
 app = Flask(__name__)
-
-
-
 
 # 必須放上自己的Channel Access Token
 line_bot_api = LineBotApi('AeSCQ1tYpdXs8IKbnLO3LBu/iGhsoP7mr2xmfWY3RP7J+P1Iiz2ugoqTdNIybhS2qlBpOxEbV34t7M+kccu8j6jrQts+K26HHQRQHq7+1HdqolWVGbp+gpWPHJqwOBKbA4Bdf2IInYsiu9qmKvamPQdB04t89/1O/w1cDnyilFU=')
@@ -31,7 +28,6 @@ line_bot_api = LineBotApi('AeSCQ1tYpdXs8IKbnLO3LBu/iGhsoP7mr2xmfWY3RP7J+P1Iiz2ug
 handler = WebhookHandler('00c82492ca8937d46ce41ec1db9be34f')
 
 line_bot_api.push_message('U994c9805d94ea22ffd8c30be66e64b0a', TextSendMessage(text='你可以開始了'))
-
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
@@ -55,8 +51,8 @@ def callback():
 ##### 基本上程式編輯都在這個function #####
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    message = text=event.message.text
-    if re.match('輸出圓餅性別圖',message):
+    message = TextSendMessage(text=event.message.text)
+        if re.match('輸出圓餅性別圖',message):
         image_message = ImageSendMessage(
             original_content_url='https://drive.google.com/uc?export=view&id=11-bhcI25JtX4pv3Mn83uMcBko3xwi26O',
             preview_image_url='https://drive.google.com/uc?export=view&id=11-bhcI25JtX4pv3Mn83uMcBko3xwi26O'
@@ -104,9 +100,6 @@ def handle_message(event):
             preview_image_url='https://drive.google.com/uc?export=view&id=11JoJ8j_T7Qs1XXtZ77jwznE2tlSrJiHC'
         )
         line_bot_api.reply_message(event.reply_token, image_message)
-    
-
-
     elif re.match('輸出長條性別圖',message):
         image_message = ImageSendMessage(
             original_content_url='https://drive.google.com/uc?export=view&id=10kkOGbSQt0td_pUZYOzZwcvrcE52Yy2k',
@@ -156,82 +149,8 @@ def handle_message(event):
         )
         line_bot_api.reply_message(event.reply_token, image_message)
     else:
-        carousel_template_message = TemplateSendMessage(
-            alt_text='這個看不到',
-            template=CarouselTemplate(
-                columns=[
-                    CarouselColumn(    
-                        thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pie_Chart.PNG/220px-Pie_Chart.PNG',
-                        title='輸出圖表',
-                        text='請點選欲輸出圖表',
-                        actions=[
-                            MessageAction(
-                            label='輸出圓餅年齡圖',
-                            text='輸出圓餅年齡圖'
-                            ),
-                            MessageAction(
-                            label='輸出圓餅性別圖',
-                            text='輸出圓餅性別圖'
-                            ),
-                        MessageAction(
-                            label='輸出圓餅臉部配件圖',
-                            text='輸出圓餅臉部配件圖'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(    
-                        thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pie_Chart.PNG/220px-Pie_Chart.PNG',
-                        title='輸出圖表',
-                        text='請點選欲輸出圖表',
-                        actions=[
-                            MessageAction(
-                            label='輸出圓餅眼鏡圖',
-                            text='輸出圓餅眼鏡圖'
-                            ),
-                            MessageAction(
-                            label='輸出圓餅情緒圖',
-                            text='輸出圓餅情緒圖'
-                            ),
-                            MessageAction(
-                            label='輸出長條情緒圖',
-                            text='輸出長條情緒圖'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(    
-                        thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pie_Chart.PNG/220px-Pie_Chart.PNG',
-                        title='輸出圖表',
-                        text='請點選欲輸出圖表',
-                        actions=[
-                            MessageAction(
-                            label='輸出長條年齡圖',
-                            text='輸出長條年齡圖'
-                            ),
-                            MessageAction(
-                            label='輸出長條性別圖',
-                            text='輸出長條性別圖'
-                            ),
-                        MessageAction(
-                            label='輸出長條臉部配件圖',
-                            text='輸出長條臉部配件圖'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(    
-                        thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pie_Chart.PNG/220px-Pie_Chart.PNG',
-                        title='輸出圖表',
-                        text='請點選欲輸出圖表',
-                        actions=[
-                            MessageAction(
-                            label='輸出長條眼鏡圖',
-                            text='輸出長條眼鏡圖'
-                            )
-                        ]
-                    )
-                ]
-            )
-        )
-        line_bot_api.reply_message(event.reply_token, carousel_template_message)
+        line_bot_api.reply_message(event.reply_token,message)
+
 #主程式
 import os
 if __name__ == "__main__":
