@@ -7,7 +7,7 @@ Created on Wed Jun  2 21:16:35 2021
 
 Line Bot聊天機器人
 第四章 選單功能
-按鈕樣板TemplateSendMessage
+多樣版組合按鈕CarouselTemplate
 """
 #載入LineBot所需要的套件
 from flask import Flask, request, abort
@@ -21,8 +21,6 @@ from linebot.exceptions import (
 from linebot.models import *
 import re
 app = Flask(__name__)
-
-
 
 
 # 必須放上自己的Channel Access Token
@@ -56,38 +54,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     message = text=event.message.text
-    if re.match('輸出圓餅性別圖',message):
-        image_message = ImageSendMessage(
-            original_content_url='https://drive.google.com/uc?export=view&id=11-bhcI25JtX4pv3Mn83uMcBko3xwi26O',
-            preview_image_url='https://drive.google.com/uc?export=view&id=11-bhcI25JtX4pv3Mn83uMcBko3xwi26O'
-        )
-        line_bot_api.reply_message(event.reply_token, image_message)
-    elif re.match('輸出圓餅年齡圖',message):
-        image_message = ImageSendMessage(
-            original_content_url='https://drive.google.com/uc?export=view&id=11MigttrIPY0WjIhLA4dPdGxeFhJEccUo',
-            preview_image_url='https://drive.google.com/uc?export=view&id=11MigttrIPY0WjIhLA4dPdGxeFhJEccUo'
-        )
-        line_bot_api.reply_message(event.reply_token, image_message)
-    elif re.match('輸出圓餅臉部配件圖',message):
-        image_message = ImageSendMessage(
-            original_content_url='https://drive.google.com/uc?export=view&id=11OZvpIaV26YcCjzWeU4BROzKfsMfecOk',
-            preview_image_url='https://drive.google.com/uc?export=view&id=11OZvpIaV26YcCjzWeU4BROzKfsMfecOk'
-        )
-        line_bot_api.reply_message(event.reply_token, image_message)
-    elif re.match('輸出圓餅頭髮圖',message):
-        image_message = ImageSendMessage(
-            original_content_url='https://drive.google.com/uc?export=view&id=11O88AFRZ_TLOb4kUijLWIS31PASezswQ',
-            preview_image_url='https://drive.google.com/uc?export=view&id=11O88AFRZ_TLOb4kUijLWIS31PASezswQ'
-        )
-        line_bot_api.reply_message(event.reply_token, image_message)
-    elif re.match('輸出圓餅鬍子圖',message):
-        image_message = ImageSendMessage(
-            original_content_url='https://drive.google.com/uc?export=view&id=115LamN5bqfV9aDouknTr5GUvYUX6',
-            preview_image_url='https://drive.google.com/uc?export=view&id=115LamN5bqfV9aDouknTr5GUvYUX6'
-        )
-        line_bot_api.reply_message(event.reply_token, image_message)
-
-    else:
+    if re.match('告訴我秘密',message):
         carousel_template_message = TemplateSendMessage(
             alt_text='這個看不到',
             template=CarouselTemplate(
@@ -164,6 +131,8 @@ def handle_message(event):
             )
         )
         line_bot_api.reply_message(event.reply_token, carousel_template_message)
+    else:
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(message))
 #主程式
 import os
 if __name__ == "__main__":
