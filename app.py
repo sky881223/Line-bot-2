@@ -56,32 +56,114 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     message = text=event.message.text
-    line_bot_api.reply_message(event.reply_token, confirm_template_message)
-    if re.match('輸出性別圖',message):
+    if re.match('輸出圓餅性別圖',message):
         image_message = ImageSendMessage(
             original_content_url='https://drive.google.com/uc?export=view&id=11-bhcI25JtX4pv3Mn83uMcBko3xwi26O',
             preview_image_url='https://drive.google.com/uc?export=view&id=11-bhcI25JtX4pv3Mn83uMcBko3xwi26O'
         )
         line_bot_api.reply_message(event.reply_token, image_message)
-    elif re.match('輸出年齡圖',message):
+    elif re.match('輸出圓餅年齡圖',message):
         image_message = ImageSendMessage(
             original_content_url='https://drive.google.com/uc?export=view&id=11MigttrIPY0WjIhLA4dPdGxeFhJEccUo',
             preview_image_url='https://drive.google.com/uc?export=view&id=11MigttrIPY0WjIhLA4dPdGxeFhJEccUo'
         )
         line_bot_api.reply_message(event.reply_token, image_message)
-    elif re.match('輸出臉部配件圖',message):
+    elif re.match('輸出圓餅臉部配件圖',message):
         image_message = ImageSendMessage(
             original_content_url='https://drive.google.com/uc?export=view&id=11OZvpIaV26YcCjzWeU4BROzKfsMfecOk',
             preview_image_url='https://drive.google.com/uc?export=view&id=11OZvpIaV26YcCjzWeU4BROzKfsMfecOk'
         )
         line_bot_api.reply_message(event.reply_token, image_message)
-    elif re.match('輸出頭髮圖',message):
+    elif re.match('輸出圓餅頭髮圖',message):
         image_message = ImageSendMessage(
             original_content_url='https://drive.google.com/uc?export=view&id=11O88AFRZ_TLOb4kUijLWIS31PASezswQ',
             preview_image_url='https://drive.google.com/uc?export=view&id=11O88AFRZ_TLOb4kUijLWIS31PASezswQ'
         )
         line_bot_api.reply_message(event.reply_token, image_message)
-    elif re.match('長條圖',message) or re.match('圓餅圖',message):
+    elif re.match('輸出圓餅鬍子圖',message):
+        image_message = ImageSendMessage(
+            original_content_url='https://drive.google.com/uc?export=view&id=115LamN5bqfV9aDouknTr5GUvYUX6',
+            preview_image_url='https://drive.google.com/uc?export=view&id=115LamN5bqfV9aDouknTr5GUvYUX6'
+        )
+        line_bot_api.reply_message(event.reply_token, image_message)
+    elif re.match('輸出圓餅眼鏡圖',message):
+        image_message = ImageSendMessage(
+            original_content_url='https://drive.google.com/uc?export=view&id=11-vCdOszIHw7OBOMd6dSjHNtjATIhhHO',
+            preview_image_url='https://drive.google.com/uc?export=view&id=11-vCdOszIHw7OBOMd6dSjHNtjATIhhHO'
+        )
+        line_bot_api.reply_message(event.reply_token, image_message)
+    elif re.match('輸出圓餅化妝圖',message):
+        image_message = ImageSendMessage(
+            original_content_url='https://drive.google.com/uc?export=view&id=11QDO_0wmD8xHjYHRdg5wxpdTw5s0aFjN',
+            preview_image_url='https://drive.google.com/uc?export=view&id=11QDO_0wmD8xHjYHRdg5wxpdTw5s0aFjN'
+        )
+        line_bot_api.reply_message(event.reply_token, image_message)
+    elif re.match('輸出圓餅情緒圖',message):
+        image_message = ImageSendMessage(
+            original_content_url='https://drive.google.com/uc?export=view&id=11JoJ8j_T7Qs1XXtZ77jwznE2tlSrJiHC',
+            preview_image_url='https://drive.google.com/uc?export=view&id=11JoJ8j_T7Qs1XXtZ77jwznE2tlSrJiHC'
+        )
+        line_bot_api.reply_message(event.reply_token, image_message)
+    
+
+
+    elif re.match('輸出長條性別圖',message):
+        image_message = ImageSendMessage(
+            original_content_url='https://drive.google.com/uc?export=view&id=10kkOGbSQt0td_pUZYOzZwcvrcE52Yy2k',
+            preview_image_url='https://drive.google.com/uc?export=view&id=10kkOGbSQt0td_pUZYOzZwcvrcE52Yy2k'
+        )
+        line_bot_api.reply_message(event.reply_token, image_message)
+    elif re.match('輸出長條年齡圖',message):
+        image_message = ImageSendMessage(
+            original_content_url='https://drive.google.com/uc?export=view&id=10j_nAmC1woflz2Fcx5vnqOFMX9LCyut1',
+            preview_image_url='https://drive.google.com/uc?export=view&id=10j_nAmC1woflz2Fcx5vnqOFMX9LCyut1'
+        )
+        line_bot_api.reply_message(event.reply_token, image_message)
+    elif re.match('輸出長條臉部配件圖',message):
+        image_message = ImageSendMessage(
+            original_content_url='https://drive.google.com/uc?export=view&id=10KbGgY0DAgGE3jhJFNmYCNpB0yr90TtB',
+            preview_image_url='https://drive.google.com/uc?export=view&id=10KbGgY0DAgGE3jhJFNmYCNpB0yr90TtB'
+        )
+        line_bot_api.reply_message(event.reply_token, image_message)
+    elif re.match('輸出長條頭髮圖',message):
+        image_message = ImageSendMessage(
+            original_content_url='https://drive.google.com/uc?export=view&id=10I5cb0CY4LOXA6PwT3C2_h4ukHplc68o',
+            preview_image_url='https://drive.google.com/uc?export=view&id=10I5cb0CY4LOXA6PwT3C2_h4ukHplc68o'
+        )
+        line_bot_api.reply_message(event.reply_token, image_message)
+    elif re.match('輸出長條鬍子圖',message):
+        image_message = ImageSendMessage(
+            original_content_url='https://drive.google.com/uc?export=view&id=10faCCFsYPtHoAvgYovgHTSDWOle4bsbU',
+            preview_image_url='https://drive.google.com/uc?export=view&id=10faCCFsYPtHoAvgYovgHTSDWOle4bsbU'
+        )
+        line_bot_api.reply_message(event.reply_token, image_message)
+    elif re.match('輸出長條眼鏡圖',message):
+        image_message = ImageSendMessage(
+            original_content_url='https://drive.google.com/uc?export=view&id=10cbnXjqNDW1A_OB19gDyz6IlsLTWQpm2',
+            preview_image_url='https://drive.google.com/uc?export=view&id=10cbnXjqNDW1A_OB19gDyz6IlsLTWQpm2'
+        )
+        line_bot_api.reply_message(event.reply_token, image_message)
+    elif re.match('輸出長條化妝圖',message):
+        image_message = ImageSendMessage(
+            original_content_url='https://drive.google.com/uc?export=view&id=10OYcqMIxcvuJgNG4qPtkNI2GibdQh9e9',
+            preview_image_url='https://drive.google.com/uc?export=view&id=10OYcqMIxcvuJgNG4qPtkNI2GibdQh9e9'
+        )
+        line_bot_api.reply_message(event.reply_token, image_message)
+    elif re.match('輸出長條情緒圖',message):
+        image_message = ImageSendMessage(
+            original_content_url='https://drive.google.com/uc?export=view&id=10hztE-EeSDaowUBYUWD3Mm9s9NL-RKCC',
+            preview_image_url='https://drive.google.com/uc?export=view&id=10hztE-EeSDaowUBYUWD3Mm9s9NL-RKCC'
+        )
+        line_bot_api.reply_message(event.reply_token, image_message)
+
+
+
+
+
+
+
+
+    else:
         carousel_template_message = TemplateSendMessage(
             alt_text='這個看不到',
             template=CarouselTemplate(
@@ -92,16 +174,16 @@ def handle_message(event):
                         text='請點選欲輸出圖表',
                         actions=[
                             MessageAction(
-                            label='輸出年齡圖',
-                            text='輸出年齡圖'+message
+                            label='輸出圓餅年齡圖',
+                            text='輸出圓餅年齡圖'+message
                             ),
                             MessageAction(
-                            label='輸出性別圖',
-                            text='輸出性別圖'+message
+                            label='輸出圓餅性別圖',
+                            text='輸出圓餅性別圖'+message
                             ),
                         MessageAction(
-                            label='輸出臉部配件圖',
-                            text='輸出臉部配件圖'+message
+                            label='輸出圓餅臉部配件圖',
+                            text='輸出圓餅臉部配件圖'+message
                             )
                         ]
                     ),
@@ -111,16 +193,16 @@ def handle_message(event):
                         text='請點選欲輸出圖表',
                         actions=[
                             MessageAction(
-                            label='輸出鬍子圖',
-                            text='輸出鬍子圖'+message
+                            label='輸出圓餅鬍子圖',
+                            text='輸出圓餅鬍子圖'+message
                             ),
                             MessageAction(
-                            label='輸出眼鏡圖',
-                            text='輸出眼鏡圖'+message
+                            label='輸出圓餅眼鏡圖',
+                            text='輸出圓餅眼鏡圖'
                             ),
                             MessageAction(
-                            label='輸出情緒圖',
-                            text='輸出情緒圖'+message
+                            label='輸出圓餅情緒圖',
+                            text='輸出圓餅情緒圖'
                             )
                         ]
                     ),
@@ -130,36 +212,72 @@ def handle_message(event):
                         text='請點選欲輸出圖表',
                         actions=[
                             MessageAction(
-                            label='輸出化妝圖',
-                            text='輸出化妝圖'+message
+                            label='輸出圓餅化妝圖',
+                            text='輸出圓餅化妝圖'
                             ),
                             MessageAction(
-                            label='輸出頭髮圖',
-                            text='輸出頭髮圖'+message
+                            label='輸出圓餅頭髮圖',
+                            text='輸出圓餅頭髮圖'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(    
+                        thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pie_Chart.PNG/220px-Pie_Chart.PNG',
+                        title='輸出圖表',
+                        text='請點選欲輸出圖表',
+                        actions=[
+                            MessageAction(
+                            label='輸出長條年齡圖',
+                            text='輸出長條年齡圖'+message
+                            ),
+                            MessageAction(
+                            label='輸出長條性別圖',
+                            text='輸出長條性別圖'+message
+                            ),
+                        MessageAction(
+                            label='輸出長條臉部配件圖',
+                            text='輸出長條臉部配件圖'+message
+                            )
+                        ]
+                    ),
+                    CarouselColumn(    
+                        thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pie_Chart.PNG/220px-Pie_Chart.PNG',
+                        title='輸出圖表',
+                        text='請點選欲輸出圖表',
+                        actions=[
+                            MessageAction(
+                            label='輸出長條鬍子圖',
+                            text='輸出長條鬍子圖'+message
+                            ),
+                            MessageAction(
+                            label='輸出長條眼鏡圖',
+                            text='輸出長條眼鏡圖'
+                            ),
+                            MessageAction(
+                            label='輸出長條情緒圖',
+                            text='輸出長條情緒圖'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(    
+                        thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pie_Chart.PNG/220px-Pie_Chart.PNG',
+                        title='輸出圖表',
+                        text='請點選欲輸出圖表',
+                        actions=[
+                            MessageAction(
+                            label='輸出長條化妝圖',
+                            text='輸出長條化妝圖'
+                            ),
+                            MessageAction(
+                            label='輸出長條頭髮圖',
+                            text='輸出長條頭髮圖'
                             )
                         ]
                     )
                 ]
             )
         )
-    else :
-        confirm_template_message = TemplateSendMessage(
-            alt_text='問問題',
-            template=ConfirmTemplate(
-                text='選擇輸出圖的種類',
-                actions=[
-                    MessageAction(
-                        label='長條投',
-                        text='長條圖'
-                    ),
-                    MessageAction(
-                        label='圓餅圖',
-                        text='圓餅圖'
-                    )
-                ]
-            )
-        )
-        line_bot_api.reply_message(event.reply_token, carousel_template_message)
+    line_bot_api.reply_message(event.reply_token, carousel_template_message)
 #主程式
 import os
 if __name__ == "__main__":
