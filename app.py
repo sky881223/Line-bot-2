@@ -56,6 +56,22 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     message = text=event.message.text
+    confirm_template_message = TemplateSendMessage(
+        alt_text='問問題',
+        template=ConfirmTemplate(
+            text='選擇輸出圖的種類',
+            actions=[
+                MessageAction(
+                    label='長條投',
+                    text='長條圖'
+                ),
+                MessageAction(
+                    label='圓餅圖',
+                    text='圓餅圖'
+                )
+            ]
+        )
+    )
     if re.match('輸出性別圖',message):
         image_message = ImageSendMessage(
             original_content_url='https://drive.google.com/uc?export=view&id=11-bhcI25JtX4pv3Mn83uMcBko3xwi26O',
@@ -80,7 +96,7 @@ def handle_message(event):
             preview_image_url='https://drive.google.com/uc?export=view&id=11O88AFRZ_TLOb4kUijLWIS31PASezswQ'
         )
         line_bot_api.reply_message(event.reply_token, image_message)
-    else:
+    elif re.match('長條圖',message) or re.match('圓餅圖',message):
         carousel_template_message = TemplateSendMessage(
             alt_text='這個看不到',
             template=CarouselTemplate(
@@ -92,15 +108,15 @@ def handle_message(event):
                         actions=[
                             MessageAction(
                             label='輸出年齡圖',
-                            text='輸出年齡圖'
+                            text='輸出年齡圖'+message
                             ),
                             MessageAction(
                             label='輸出性別圖',
-                            text='輸出性別圖'
+                            text='輸出性別圖'+message
                             ),
                         MessageAction(
                             label='輸出臉部配件圖',
-                            text='輸出臉部配件圖'
+                            text='輸出臉部配件圖'+message
                             )
                         ]
                     ),
@@ -111,15 +127,30 @@ def handle_message(event):
                         actions=[
                             MessageAction(
                             label='輸出鬍子圖',
-                            text='輸出鬍子圖'
+                            text='輸出鬍子圖'+message
                             ),
                             MessageAction(
                             label='輸出眼鏡圖',
-                            text='輸出眼鏡圖'
+                            text='輸出眼鏡圖'+message
                             ),
                             MessageAction(
                             label='輸出情緒圖',
-                            text='輸出情緒圖'
+                            text='輸出情緒圖'+message
+                            )
+                        ]
+                    ),
+                    CarouselColumn(    
+                        thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pie_Chart.PNG/220px-Pie_Chart.PNG',
+                        title='輸出圖表',
+                        text='請點選欲輸出圖表',
+                        actions=[
+                            MessageAction(
+                            label='輸出化妝圖',
+                            text='輸出化妝圖'+message
+                            ),
+                            MessageAction(
+                            label='輸出頭髮圖',
+                            text='輸出頭髮圖'+message
                             )
                         ]
                     )
