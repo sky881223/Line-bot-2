@@ -82,8 +82,8 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, image_message)
     elif re.match('輸出圓餅鬍子圖',message):
         image_message = ImageSendMessage(
-            original_content_url='https://drive.google.com/uc?export=view&id=115LamN5bqfV9aDouknTr5GUvYUX6',
-            preview_image_url='https://drive.google.com/uc?export=view&id=115LamN5bqfV9aDouknTr5GUvYUX6'
+            original_content_url='https://drive.google.com/uc?export=view&id=115LamN5bqfV9aDouknTr5GUvYUX6-D7k',
+            preview_image_url='https://drive.google.com/uc?export=view&id=115LamN5bqfV9aDouknTr5GUvYUX6-D7k'
         )
         line_bot_api.reply_message(event.reply_token, image_message)
     elif re.match('輸出圓餅眼鏡圖',message):
@@ -208,12 +208,12 @@ def handle_message(event):
                         text='請點選欲輸出圖表',
                         actions=[
                             MessageAction(
-                                label='輸出圓餅年齡圖',
-                                text='輸出圓餅年齡圖'
+                                label='輸出圓餅頭髮圖',
+                                text='輸出圓餅頭髮圖'
                             ),
                             MessageAction(
-                                label='輸出長條年齡圖',
-                                text='輸出長條年齡圖'
+                                label='輸出長條頭髮圖',
+                                text='輸出長條頭髮圖'
                             )
                         ]
                     ),
