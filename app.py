@@ -201,7 +201,7 @@ def handle_message(event):
                                 text='輸出圓餅情緒圖'
                             )
                         ]
-                    )
+                    ),
                     CarouselColumn(    
                         thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pie_Chart.PNG/220px-Pie_Chart.PNG',
                         title='輸出圖表',
