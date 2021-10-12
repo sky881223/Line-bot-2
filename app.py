@@ -163,16 +163,16 @@ def handle_message(event):
                         text='請點選欲輸出圖表',
                         actions=[
                             MessageAction(
-                                label='輸出圓餅年齡圖',
-                                text='輸出圓餅年齡圖'
+                                    label='輸出圓餅年齡圖',
+                                    text='輸出圓餅年齡圖'
                             ),
                             MessageAction(
-                                label='輸出圓餅性別圖',
-                                text='輸出圓餅性別圖'
+                                    label='輸出圓餅性別圖',
+                                    text='輸出圓餅性別圖'
                             ),
                             MessageAction(
-                                label='輸出圓餅臉部配件圖',
-                                text='輸出圓餅臉部配件圖'
+                                    label='輸出圓餅臉部配件圖',
+                                    text='輸出圓餅臉部配件圖'
                                 )
                             ]
                         ),
@@ -182,16 +182,16 @@ def handle_message(event):
                             text='請點選欲輸出圖表',
                             actions=[
                                 MessageAction(
-                                label='輸出圓餅眼鏡圖',
-                                text='輸出圓餅眼鏡圖'
+                                    label='輸出圓餅眼鏡圖',
+                                    text='輸出圓餅眼鏡圖'
                                 ),
                                 MessageAction(
-                                label='輸出圓餅情緒圖',
-                                text='輸出圓餅情緒圖'
+                                    label='輸出圓餅情緒圖',
+                                    text='輸出圓餅情緒圖'
                                 ),
                                 MessageAction(
-                                label='輸出長條情緒圖',
-                                text='輸出長條情緒圖'
+                                    label='輸出長條情緒圖',
+                                    text='輸出長條情緒圖'
                                 )
                             ]
                         ),
@@ -201,16 +201,16 @@ def handle_message(event):
                             text='請點選欲輸出圖表',
                             actions=[
                                 MessageAction(
-                                label='輸出長條年齡圖',
-                                text='輸出長條年齡圖'
+                                    label='輸出長條年齡圖',
+                                    text='輸出長條年齡圖'
                                 ),
                                 MessageAction(
-                                label='輸出長條性別圖',
-                                text='輸出長條性別圖'
+                                    label='輸出長條性別圖',
+                                    text='輸出長條性別圖'
                                 ),
                             MessageAction(
-                                label='輸出長條臉部配件圖',
-                                text='輸出長條臉部配件圖'
+                                    label='輸出長條臉部配件圖',
+                                    text='輸出長條臉部配件圖'
                                 )
                             ]
                         ),
@@ -220,15 +220,14 @@ def handle_message(event):
                             text='請點選欲輸出圖表',
                             actions=[
                                 MessageAction(
-                                label='輸出長條眼鏡圖',
-                                text='輸出長條眼鏡圖'
+                                    label='輸出長條眼鏡圖',
+                                    text='輸出長條眼鏡圖'
                                 )
                             ]
                         )
                     ]
                 )
             )
-        )
         line_bot_api.reply_message(event.reply_token, carousel_template_message)
 #主程式
 import os
