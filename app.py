@@ -66,12 +66,8 @@ def handle_message(event):
                         text='萬丈高樓平地起',
                         actions=[
                             MessageAction(
-                                label='輸出圓餅年齡圖',
-                                text='輸出圓餅年齡圖'
-                            ),
-                            MessageAction(
-                                label='輸出圓餅性別圖',
-                                text='輸出圓餅性別圖'
+                                label='教學內容',
+                                text='拆解步驟詳細介紹安裝並使用Anaconda、Python、Spyder、VScode…'
                             ),
                             MessageAction(
                                 label='輸出圓餅臉部配件圖',
