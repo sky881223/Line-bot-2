@@ -66,12 +66,16 @@ def handle_message(event):
                         text='萬丈高樓平地起',
                         actions=[
                             MessageAction(
-                                label='教學內容',
-                                text='拆解步驟詳細介紹安裝並使用Anaconda、Python、Spyder、VScode…'
+                                label='輸出圓餅年齡圖',
+                                text='輸出圓餅年齡圖'
                             ),
-                            URIAction(
-                                label='馬上查看',
-                                uri='https://marketingliveincode.com/?page_id=270'
+                            MessageAction(
+                                label='輸出圓餅性別圖',
+                                text='輸出圓餅性別圖'
+                            ),
+                            MessageAction(
+                                label='輸出圓餅臉部配件圖',
+                                text='輸出圓餅臉部配件圖'
                             )
                         ]
                     ),
