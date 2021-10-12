@@ -167,8 +167,8 @@ def handle_message(event):
                                 text='輸出圓餅年齡圖'
                             ),
                             MessageAction(
-                                label='輸出圓餅臉部配件圖',
-                                text='輸出圓餅臉部配件圖'
+                                label='輸出長條年齡圖',
+                                text='輸出長條年齡圖'
                             )
                         ]
                     ),
@@ -182,8 +182,8 @@ def handle_message(event):
                                 text='輸出圓餅眼鏡圖'  
                             ),
                             MessageAction(
-                                label='輸出長條情緒圖',
-                                text='輸出長條情緒圖'
+                                label='輸出長條眼鏡圖',
+                                text='輸出長條眼鏡圖'
                             )
                         ]
                     ),
@@ -197,21 +197,6 @@ def handle_message(event):
                                 text='輸出圓餅性別圖'
                             ),
                             MessageAction(
-                                label='輸出圓餅情緒圖',
-                                text='輸出圓餅情緒圖'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(    
-                        thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pie_Chart.PNG/220px-Pie_Chart.PNG',
-                        title='輸出圖表',
-                        text='請點選欲輸出圖表',
-                        actions=[
-                            MessageAction(
-                                label='輸出長條年齡圖',
-                                text='輸出長條年齡圖'
-                            ),
-                            MessageAction(
                                 label='輸出長條性別圖',
                                 text='輸出長條性別圖'
                             )
@@ -223,12 +208,72 @@ def handle_message(event):
                         text='請點選欲輸出圖表',
                         actions=[
                             MessageAction(
-                                label='輸出長條眼鏡圖',
-                                text='輸出長條眼鏡圖'
+                                label='輸出圓餅年齡圖',
+                                text='輸出圓餅年齡圖'
+                            ),
+                            MessageAction(
+                                label='輸出長條年齡圖',
+                                text='輸出長條年齡圖'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(    
+                        thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pie_Chart.PNG/220px-Pie_Chart.PNG',
+                        title='輸出圖表',
+                        text='請點選欲輸出圖表',
+                        actions=[
+                            MessageAction(
+                                label='輸出圓餅臉部配件圖',
+                                text='輸出圓餅臉部配件圖'
                             ),
                             MessageAction(
                                 label='輸出長條臉部配件圖',
                                 text='輸出長條臉部配件圖'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(    
+                        thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pie_Chart.PNG/220px-Pie_Chart.PNG',
+                        title='輸出圖表',
+                        text='請點選欲輸出圖表',
+                        actions=[
+                            MessageAction(
+                                label='輸出圓餅鬍子圖',
+                                text='輸出圓餅鬍子圖'
+                            ),
+                            MessageAction(
+                                label='輸出長條鬍子圖',
+                                text='輸出長條鬍子圖'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(    
+                        thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pie_Chart.PNG/220px-Pie_Chart.PNG',
+                        title='輸出圖表',
+                        text='請點選欲輸出圖表',
+                        actions=[
+                            MessageAction(
+                                label='輸出圓餅情緒圖',
+                                text='輸出圓餅情緒圖'
+                            ),
+                            MessageAction(
+                                label='輸出長條情緒圖',
+                                text='輸出長條情緒圖'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(    
+                        thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pie_Chart.PNG/220px-Pie_Chart.PNG',
+                        title='輸出圖表',
+                        text='請點選欲輸出圖表',
+                        actions=[
+                            MessageAction(
+                                label='輸出圓餅化妝圖',
+                                text='輸出圓餅化妝圖'
+                            ),
+                            MessageAction(
+                                label='輸出長條化妝圖',
+                                text='輸出長條化妝圖'
                             )
                         ]
                     )
