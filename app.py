@@ -69,10 +69,7 @@ def handle_message(event):
                                 label='輸出圓餅年齡圖',
                                 text='輸出圓餅年齡圖'
                             ),
-                            MessageAction(
-                                label='輸出圓餅臉部配件圖',
-                                text='輸出圓餅臉部配件圖'
-                            ),                           
+                        
                             MessageAction(
                                 label='輸出圓餅性別圖',
                                 text='輸出圓餅性別圖'
